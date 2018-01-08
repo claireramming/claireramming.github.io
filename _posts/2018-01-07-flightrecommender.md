@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Flight recommender
-subtitle: Excerpt from Soulshaping by Jeff Brown
+subtitle: Skills used: pandas, bokeh, Google QPX Express
 bigimg: /img/path.jpg
 ---
 
