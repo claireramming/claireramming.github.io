@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Flight recommender
-subtitle: Skills used: pandas, bokeh, Google QPX Express
+subtitle: Skills used -> pandas, bokeh, Google QPX Express
 bigimg: /img/path.jpg
 ---
 
