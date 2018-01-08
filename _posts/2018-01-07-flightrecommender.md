@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Flake Flight recommender it till you make it
+title: Flight recommender
 subtitle: Excerpt from Soulshaping by Jeff Brown
 bigimg: /img/path.jpg
 ---
