@@ -19,7 +19,7 @@ It is also a simple task to turn any of the military times into datetime objects
 
 I was alerted of the messiest component of the data set by fellow kaggle users that had already used the data for projects. The origin_airport and destination_airport columns contained airports with 3-digit codes as expected, but also contained a subset of rows with 5-digit airport codes that could not be mapped to the codes in airports.csv. A method for converting the 5-digit airport codes was given by a user named Scott Cole in the discussion. I borrowed his method of making a dictionary from a map of the 5-digit codes to the 3-digit codes, then looping through the data. I made this process slightly faster by finding the start and end of the offending 5-digit codes, as I noticed they were lumped together when I was making some initial visualizations of my data. There was an inconspicuous break in the data from October to November if I was looking at data relating to specific origin and destination airports (see figure below).
 
-![Fig 1. Scatterplot of delay times for flights from LGA to RDU. The colors correspond to the airline. Datapoints pulled from flights.csv before accounting for 5-digit airport codes.](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_1.png)
+![Fig 1. Scatterplot of delay times for flights from LGA to RDU. The colors correspond to the airline. Datapoints pulled from flights.csv before accounting for 5-digit airport codes.](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_1.png)
 
 Since the data was originally sorted by date, the “missing” data that actually corresponded to the 5-digit airport codes that were not yet switched to 3-digit codes were in bunched together, so I could start and end the loop at specific points in the index, making the loop run a few minutes faster. I then used write_csv to save off the clean data so I wouldn’t have to run the loop every time I restarted the notebook. Now with my clean data, I could fill in that October gap (see jupyter notebook for figure).
 
@@ -28,17 +28,17 @@ The last thing I did to make my data slightly cleaner, was create  dictionary fo
 #### Initial Findings:  
 My initial tests to find factors affecting delays began with studying the delay breakdowns already present in the data set. Looking at total delays based on month, there is variance based on travel month. Summer and winter have a higher rate of delays, and October looks like the best month to travel. The second graph is by day of week, there is less variance here although Saturday (day 6) seems to be a lighter delay day than the others. 
 
-![](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_2.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_2.png)
 
 The data set also contains 5 types of delays reported. The bureau of transportation statistics gives a nice [breakdown](https://www.rita.dot.gov/bts/help/aviation/html/understanding.html) of what each delay type actually involves. For instance, the weather delay is actually only counting extreme weather. Milder weather is accounted for in ‘air system delays’. You can see below that weather delays don’t account for many of the delays, but they do cause much higher delay times than the others. Other flights being delayed tend to cause later flights to also be delayed. Unsurprisingly, the blanket delay type of ‘air system delays’ account for a decent amount of the overall delays.
 
 The graphs for these are below. If the title of the graph has an asterisk, that indicates the axis displaying the delay percent does not go from 0 to 100, but instead uses a smaller scale to allow the data to be visible and show the variance. They should not be directly compared size wise to the other graphs.
 
-![](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_2.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_3.png)
 
 I also looked at time of day of departure to determine whether that was a factor in whether a flight was delayed or not. There is definitely a correlation between time of day and the percentage of flights that are delayed. Each point on the graph on the following page is the percent of flights delayed for a particular departure time. There is a steady climb in delay percent from 5am to about 9pm. There are not many flights between midnight and 5am (aka red-eye flights) which leads to their more random spread of delay percentages.
 
-![](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_4.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_4.png)
  
 My initial intent with this project was to use logistic regression to predict if a flight will be delayed, but looking at the data you can actually have on hand when booking, the biggest indicator is Scheduled Departure Time. While there is a strong correlation, it doesn’t quite stack up to the stronger indicators that you don’t have on hand when booking a flight. Instead I thought it would be more useful to use the data to find destinations that have the least delays, and suggest those as options for someone looking to book a quick trip. 
 
