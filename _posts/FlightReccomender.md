@@ -1,7 +1,7 @@
-—
+---
 title: Quick Vacation Recommender
 subtitle: Recommends top three destinations with lowest delay rate and price. Skills used: pandas, bokeh, Google QPX Express
-—
+---
 
 ## Capstone #1 - Flight Delays  
 Airline customers are constantly being surprised by delays and cancellations. If they knew how likely a flight was to be delayed before they left for the airport, or even before they booked, they may be able to plan better, or be less upset when their flight is delayed. They may even be more inclined to book a vacation to a location they normally would not if they new it was less likely to be delayed. With this project I’d like to find trends as to what causes a flight to be delayed, and determine whether certain factors about previous flights can help predict whether or not a flight will be delayed. My ultimate goal for this project is to create a ‘vacation recommender’ based on departure location, delay percentage, and flight price.
