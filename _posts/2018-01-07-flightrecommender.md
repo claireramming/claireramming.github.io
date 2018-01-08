@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Quick Vacation Recommender
 subtitle: Recommends top three destinations with lowest delay rate and price. Skills used: pandas, bokeh, Google QPX Express
 ---
