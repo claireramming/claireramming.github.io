@@ -1,6 +1,6 @@
 ---
 title:  AirBnB Fare Finder
-subtitle: Recommends ideal price for AirBnB from listing details. Skills used-> pandas, numpy, sklearn, flask, wtform
+subtitle: Skills used-> sklearn, flask, wtform, dill, pandas, numpy
 ---
 
 ### Capstone 2 - AirBnB Fair Fare Estimator
