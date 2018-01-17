@@ -3,8 +3,7 @@ layout: post
 title: Flight recommender
 subtitle: Skills used -> pandas, bokeh, Google QPX Express
 ---
-
-## Capstone #1 - Flight Delays  
+ 
 Airline customers are constantly being surprised by delays and cancellations. If they knew how likely a flight was to be delayed before they left for the airport, or even before they booked, they may be able to plan better, or be less upset when their flight is delayed. They may even be more inclined to book a vacation to a location they normally would not if they new it was less likely to be delayed. With this project I’d like to find trends as to what causes a flight to be delayed, and determine whether certain factors about previous flights can help predict whether or not a flight will be delayed. My ultimate goal for this project is to create a ‘vacation recommender’ based on departure location, delay percentage, and flight price.
 
 The client for this project is an airline. They can use this analysis to alert customers of potential delays early, and even possibly prevent future delays. Another potential client would be travel agents and non-airline companies that sell airline tickets, they can suggest flights for their clients based on how likely a flight is to get delayed (for example, if a certain afternoon flight is often delayed, maybe suggest an earlier flight to their client), along with the price of tickets. 
