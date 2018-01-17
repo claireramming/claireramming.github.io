@@ -3,8 +3,6 @@ title:  AirBnB Fare Finder
 subtitle: Skills used-> sklearn, flask, wtform, dill, pandas, numpy
 ---
 
-### Capstone 2 - AirBnB Fair Fare Estimator
-
 It can be difficult in a big city such as New York to figure out whether you are getting a fair price for an AirBnB, or on the opposite side, to determine what price to set your room or apartment at for renting. The goal of this project is to use machine learning to suggest fair prices for rooms and apartments on AirBnB in New York City, with the goal of helping hosts and renters on AirBnB. 
 
 I found a dataset pulled by Tom Slee that contains the basic AirBnB listing data for apartments in NYC in July 2017. The dataset contained ~41000 rows and was fairly clean already. Unfortunately some key info like number of bathrooms was not pulled successfully, making the column useless. I also cut out columns that were AirBnB specific, like `room_id`, `host_id`, and `location`.  
