@@ -34,7 +34,7 @@ The data set also contains 5 types of delays reported. The bureau of transportat
 
 The graphs for these are below. If the title of the graph has an asterisk, that indicates the axis displaying the delay percent does not go from 0 to 100, but instead uses a smaller scale to allow the data to be visible and show the variance. They should not be directly compared size wise to the other graphs.
 
-![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_2.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_3.png)
 
 I also looked at time of day of departure to determine whether that was a factor in whether a flight was delayed or not. There is definitely a correlation between time of day and the percentage of flights that are delayed. Each point on the graph on the following page is the percent of flights delayed for a particular departure time. There is a steady climb in delay percent from 5am to about 9pm. There are not many flights between midnight and 5am (aka red-eye flights) which leads to their more random spread of delay percentages.
 
