@@ -3,7 +3,7 @@ layout: post
 title: Flight recommender
 subtitle: Skills used -> pandas, bokeh, Google QPX Express
 ---
- 
+  
 Airline customers are constantly being surprised by delays and cancellations. If they knew how likely a flight was to be delayed before they left for the airport, or even before they booked, they may be able to plan better, or be less upset when their flight is delayed. They may even be more inclined to book a vacation to a location they normally would not if they new it was less likely to be delayed. With this project I’d like to find trends as to what causes a flight to be delayed, and determine whether certain factors about previous flights can help predict whether or not a flight will be delayed. My ultimate goal for this project is to create a ‘vacation recommender’ based on departure location, delay percentage, and flight price.
 
 The client for this project is an airline. They can use this analysis to alert customers of potential delays early, and even possibly prevent future delays. Another potential client would be travel agents and non-airline companies that sell airline tickets, they can suggest flights for their clients based on how likely a flight is to get delayed (for example, if a certain afternoon flight is often delayed, maybe suggest an earlier flight to their client), along with the price of tickets. 
@@ -17,9 +17,9 @@ I took a few steps to make the data easier for me to use, the first was to combi
 
 It is also a simple task to turn any of the military times into datetime objects by concatenating the YEAR_MONTH_DAY row with the wanted time row and using the pandas.to_datetime(format=”%Y-%m-%d %H%M”). However, I did have to correct occurences of 2400 to 0000 before converting (using the replace function). 
 
-I was alerted of the messiest component of the data set by fellow kaggle users that had already used the data for projects. The origin_airport and destination_airport columns contained airports with 3-digit codes as expected, but also contained a subset of rows with 5-digit airport codes that could not be mapped to the codes in airports.csv. A method for converting the 5-digit airport codes was given by a user named Scott Cole in the discussion. I borrowed his method of making a dictionary from a map of the 5-digit codes to the 3-digit codes, then looping through the data. I made this process slightly faster by finding the start and end of the offending 5-digit codes, as I noticed they were lumped together when I was making some initial visualizations of my data. There was an inconspicuous break in the data from October to November if I was looking at data relating to specific origin and destination airports (see figure below).
+I was alerted of the messiest component of the data set by fellow kaggle users that had already used the data for projects. The origin_airport and destination_airport columns contained airports with 3-digit codes as expected, but also contained a subset of rows with 5-digit airport codes that could not be mapped to the codes in airports.csv. A method for converting the 5-digit airport codes was given by a user named Scott Cole in the discussion. I borrowed his method of making a dictionary from a map of the 5-digit codes to the 3-digit codes, then looping through the data. I made this process slightly faster by finding the start and end of the offending 5-digit codes, as I noticed they were lumped together when I was making some initial visualizations of my data. There was an inconspicuous break in the data from October to November if I was looking at data relating to specific origin and destination airports. The scatterplot below shows delay times for flights from LGA to RDU. The colors correspond to the airline. Datapoints pulled from flights.csv before accounting for 5-digit airport codes.
 
-![Fig 1. Scatterplot of delay times for flights from LGA to RDU. The colors correspond to the airline. Datapoints pulled from flights.csv before accounting for 5-digit airport codes.](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_1.png)
+![Fig 1](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_1.png)
 
 Since the data was originally sorted by date, the “missing” data that actually corresponded to the 5-digit airport codes that were not yet switched to 3-digit codes were in bunched together, so I could start and end the loop at specific points in the index, making the loop run a few minutes faster. I then used write_csv to save off the clean data so I wouldn’t have to run the loop every time I restarted the notebook. Now with my clean data, I could fill in that October gap (see jupyter notebook for figure).
 
@@ -28,13 +28,13 @@ The last thing I did to make my data slightly cleaner, was create  dictionary fo
 #### Initial Findings:  
 My initial tests to find factors affecting delays began with studying the delay breakdowns already present in the data set. Looking at total delays based on month, there is variance based on travel month. Summer and winter have a higher rate of delays, and October looks like the best month to travel. The second graph is by day of week, there is less variance here although Saturday (day 6) seems to be a lighter delay day than the others. 
 
-![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_2.png)
+![](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_2.png)
 
 The data set also contains 5 types of delays reported. The bureau of transportation statistics gives a nice [breakdown](https://www.rita.dot.gov/bts/help/aviation/html/understanding.html) of what each delay type actually involves. For instance, the weather delay is actually only counting extreme weather. Milder weather is accounted for in ‘air system delays’. You can see below that weather delays don’t account for many of the delays, but they do cause much higher delay times than the others. Other flights being delayed tend to cause later flights to also be delayed. Unsurprisingly, the blanket delay type of ‘air system delays’ account for a decent amount of the overall delays.
 
 The graphs for these are below. If the title of the graph has an asterisk, that indicates the axis displaying the delay percent does not go from 0 to 100, but instead uses a smaller scale to allow the data to be visible and show the variance. They should not be directly compared size wise to the other graphs.
 
-![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_3.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_2.png)
 
 I also looked at time of day of departure to determine whether that was a factor in whether a flight was delayed or not. There is definitely a correlation between time of day and the percentage of flights that are delayed. Each point on the graph on the following page is the percent of flights delayed for a particular departure time. There is a steady climb in delay percent from 5am to about 9pm. There are not many flights between midnight and 5am (aka red-eye flights) which leads to their more random spread of delay percentages.
 
@@ -47,5 +47,7 @@ I started building my recommender by writing a function that finds the top ten d
 Once that ranking is achieved, the top 3 destinations are plotted onto a map of the US, to visually show the user where they can travel from their chosen origin point. Bokeh allows for the points to be overlayed over a map of the US, and includes hovertext showing the airport code and ranking of the destination. The origin is denoted with a red diamond and also has hovertext displaying the airport code. 
 
 My execution of this was fairly simple, and has a lot of room for improvement. Ideally a date selection would be implemented so the user can find the best destination for a certain span of travel instead of the arbitrary date that I have chosen. I could also pull more info from QPX and use it with the kaggle dataset to get better indicators for a more interesting ranking (for instance, maybe take the top 3 flights to each destination, rank those by delay likelihood using airline and time info, then use the top from that to use for the destination ranking overall). I’d also like to add support for nearby airports, for instance, when I fly out of NYC I can use JFK, LGA, or EWR, it would be useful to compare the three without having to run the search 3 times manually. 
+
+![flight recommender](https://media.giphy.com/media/3oFzmsq4Teu9IOuBHi/giphy.gif)
 
 More analysis and the actual tool can be found on [my github](https://github.com/claireramming/Capstone_1_Flight_Delays). 
