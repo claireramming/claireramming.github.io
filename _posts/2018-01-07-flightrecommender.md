@@ -28,7 +28,7 @@ The last thing I did to make my data slightly cleaner, was create  dictionary fo
 #### Initial Findings:  
 My initial tests to find factors affecting delays began with studying the delay breakdowns already present in the data set. Looking at total delays based on month, there is variance based on travel month. Summer and winter have a higher rate of delays, and October looks like the best month to travel. The second graph is by day of week, there is less variance here although Saturday (day 6) seems to be a lighter delay day than the others. 
 
-![](https://github.com/claireramming/claireramming.github.io/blob/master/images/flights_2.png)
+![](https://raw.githubusercontent.com/claireramming/claireramming.github.io/master/images/flights_2.png)
 
 The data set also contains 5 types of delays reported. The bureau of transportation statistics gives a nice [breakdown](https://www.rita.dot.gov/bts/help/aviation/html/understanding.html) of what each delay type actually involves. For instance, the weather delay is actually only counting extreme weather. Milder weather is accounted for in ‘air system delays’. You can see below that weather delays don’t account for many of the delays, but they do cause much higher delay times than the others. Other flights being delayed tend to cause later flights to also be delayed. Unsurprisingly, the blanket delay type of ‘air system delays’ account for a decent amount of the overall delays.
 
