@@ -1,3 +1,9 @@
+---
+layout: post
+title: Pacman in Javascript
+subtitle: Skills used -> javascript, html, css
+---
+
 # Pacman in Javascript
 
 When I was a kid I was obsessed with a little joystick box I could plug in to my cathode ray tube tv and play a bunch of old arcade games like Pacman. 
