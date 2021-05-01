@@ -4,8 +4,6 @@ title: Pacman in Javascript
 subtitle: Skills used -> javascript, html, css
 ---
 
-# Pacman in Javascript
-
 When I was a kid I was obsessed with a little joystick box I could plug in to my cathode ray tube tv and play a bunch of old arcade games like Pacman. 
 As part of the Scrimba front end developer path, I was excited to learn how to code pacman in javascript! After already building a snake game with Ania 
 in a previous module, I stopped the lessons fairly early once she had the basic styling set up and tried to code it myself without guidance. 
