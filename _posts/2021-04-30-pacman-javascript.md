@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pacman in Javascript
+title: Pacman Game with Javascript
 subtitle: Skills used -> javascript, html, css
 ---
 
