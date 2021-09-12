@@ -614,7 +614,9 @@ h3 { font-size: var(--fs-h3) }
 }
 
 .portfolio-item-individual img {
-    max-width: 800px;
+    object-fit: cover;
+    width: 90vw;
+    max-width: 700px;
     margin: 0 auto 1em;
 }
 
