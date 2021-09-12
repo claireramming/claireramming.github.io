@@ -1,12 +1,9 @@
 const root = document.querySelector(':root')
 const intro = document.querySelector('.intro')
-const item = document.querySelector('.portfolio-item')
-const nameDiv = document.querySelector('.name')
+const introSub = document.querySelector('.section__subtitle--intro')
 const footer = document.querySelector('.footer')
-const about = document.querySelector('.about-me')
-const work = document.querySelector('.my-work')
+const workTitle = document.querySelector('.section__title--work')
 const navToggle = document.querySelector('.nav-toggle')
-const nav = document.querySelector('.nav')
 const navLinks = document.querySelectorAll('.nav__link')
 const header = document.querySelector('.header')
 const headerDiv = document.querySelector('.header-div')
@@ -22,14 +19,10 @@ dark = (localDark === 'true')
 function darkModeOn() {
     sun.classList.add('set-sun')
     root.classList.add('dark')
-    document.body.classList.add('dark')
-    nav.classList.add('dark')
     footer.classList.add('dark')
     intro ? intro.classList.add('dark') : ''
-    about ? about.classList.add('dark') : ''
-    item ? item.classList.add('dark') : ''
-    nameDiv ? nameDiv.classList.add('dark') : ''
-    work ? work.classList.add('dark') : ''
+    introSub ? introSub.classList.add('dark') : '';
+    workTitle ? work.classList.add('dark') : ''
     for (let i=0; i < rays.length; i++) {
         if (i <= 1) {
           rays[i].classList.add('lower')
@@ -55,14 +48,10 @@ function darkModeOn() {
 function darkModeOff() {
     sun.classList.remove('set-sun')
     root.classList.remove('dark')
-    document.body.classList.remove('dark')
-    nav.classList.remove('dark')
     footer.classList.remove('dark')
     intro ? intro.classList.remove('dark') : ''
-    about ? about.classList.remove('dark') : ''
-    item ? item.classList.remove('dark') : ''
-    nameDiv ? nameDiv.classList.remove('dark') : ''
-    work ? work.classList.remove('dark') : ''
+    introSub ? introSub.classList.remove('dark') : '';
+    workTitle ? work.classList.remove('dark') : ''
     for (let i=0; i < rays.length; i++) {
         if (i <= 1) {
             rays[i].classList.remove('lower')
@@ -124,10 +113,7 @@ document.addEventListener('scroll', () => {
     } else if (window.scrollY < 355) {
         const opacity = window.scrollY / 355
         header.style.background = `rgba(255, 255, 255, ${opacity})`
-    } else  if (dark) {
-        header.style.background = "var(--clr-secondary-dark)"
-    }
-    else {
+    } else {
         header.style.background = "var(--clr-light)"
     }
 })
