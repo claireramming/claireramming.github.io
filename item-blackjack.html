@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire Ramming Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>
+        <header id='header' class='header'>
+            <div id='sun' class='sun'>
+                <div class='ball'></div>
+                <div class='ray one'></div>
+                <div class='ray two'></div>
+                <div class='ray three'></div>
+                <div class='ray four'></div>
+                <div class='ray five'></div>
+                <div class='ray six'></div>
+                <div class='ray seven'></div>
+                <div class='ray eight'></div>
+            </div>
+            <div class="header-div">Claire Ramming</div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="portfolio-item">
+            <h1 class="section__title section__title--item">
+                Coding <strong>Blackjack</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--item">js, html, css</p>
+            <img src="img/blackjack.png" alt="blackjack project" class="item__img">
+            <p class='date'>May 13th, 2021</p>
+        </section> 
+        
+        <div class="portfolio-item-individual">
+            <p>I’ve been learning Javascript and React through Scrimba’s frontend developer path, this project was started in the revised module 3
+                after I had already picked up quite a bit of javascript skills in the old module 3 and further modules. The original blackjack game a simple project to deal 
+                cards until the player hit 21 or busted. I expanded on that to use some simple css and emojis to make the cards look like cards.
+                By far the trickiest and most interesting part was designing the dealer and keeping track of the deck of cards. </p>
+            <p>The dealer AI runs after the user has made their decision to hit or hold, and makes decisions based on it's current cards. Since dealers 
+                actually have to follow a protocol, the logic was already there for me to build. If the dealer is under 17, they keep drawing until they 
+                beat the player or bust. Timing out the dealer's actions so it moves smoothly at a human speed instead of a computer speed was the main 
+                piece that I think makes this game fun to play, and that was achieved by setting a transition on the card changes and setting a timeout 
+                of 1 second between every dealer move.</p> 
+            <p>The deck I kept track of via indexes and arrays. One array holds all the possible cards, so basically each value repeated 4 times. Since cards
+                are so repetitive, I could use a modulo 4 on the index to determine what suit to give the card, and the actual index I kept track of in a separate 
+                array called `current cards`. The drawCard function would look over that array to determine if it had drawn the card already or not, if so it would 
+                try again until it drew a card not selected yet. I wouldn't reccomend this for larger arrays but for just a small 52 item array it doesn't affect performance
+                much if it keeps pulling cards it has already drawn. While keeping track of just one deck makes my game a card-counter's dream, since I'm not a casino, that is fine with me.</p>
+
+            <p>Play my blackjack game <a href='https://claireramming.github.io/blackjack/'>here!</a></p>
+
+            <p>See my code on <a href='https://github.com/claireramming/blackjack'>github.</a></p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:ceramming@gmail.com" class="footer__link">ceramming@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io/claireramming">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/claire-ramming/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/claireramming">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>

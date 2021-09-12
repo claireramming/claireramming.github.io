@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire Ramming Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>
+        <header id='header' class='header'>
+            <div id='sun' class='sun'>
+                <div class='ball'></div>
+                <div class='ray one'></div>
+                <div class='ray two'></div>
+                <div class='ray three'></div>
+                <div class='ray four'></div>
+                <div class='ray five'></div>
+                <div class='ray six'></div>
+                <div class='ray seven'></div>
+                <div class='ray eight'></div>
+            </div>
+            <div class="header-div">Claire Ramming</div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="portfolio-item">
+            <h1 class="section__title section__title--item">
+                React <strong>To-Do List</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--item">React.js, html, css</p>
+            <img src="img/todo.png" alt="todo list project" class="item__img">
+            <p class='date'>September 10th, 2021</p>
+        </section> 
+        
+        <div class="portfolio-item-individual">
+            <p>This is where it all began. My journey to becoming a front-end engineer started (kind of) with this simple to-do app. See, I had an issue at 
+                work that I wanted to solve. I could code up what I wanted to do in python, but it needed a front-end. Specifically a front-end that could display
+            two tables that could transfer data back and forth between them. That's really it, I went down the front-end dev rabbit hole because flask couldn't transfer 
+            a row of data between two tables! I found scrimba's free Learn React tutorial and the rest is history.</p>
+            <p>The app looked pretty plain and boring when I first started, and I only added a small bit of functionality, since at the same time I was going through the 
+                tutorial to build this I was also coding my own React app to solve my work problem. Also I really didn't know or want to know css yet. This is what the app 
+                looked like when I first deployed it to github pages: 
+            </p>
+            <img src='/img/todo-old.png' alt='sad looking previous version of to-do list app'>
+            <p>It is quite amazing how styling can make a difference. The functionality of the app is essentially the same (I fixed some bugs and added local storage usage instead 
+                of starting with fake default tasks). Now I know javascript a lot better, and I actually know what flexbox and grid are now and how to use them. I also took the 
+                time to learn how to customize checkboxes. I had no idea it was so complicated, but now I know how to make them look nice and keep them accessible thanks to 
+                <a href='https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/'>this article</a>. 
+                At the time of posting this I'm about to dive back into learning React after finishing the scrimba front end career path javascript/css/html components. 
+                Hopefully I will have another cool react app to share soon that really shows off my skills, but for now take this as a story of my journey so far, 
+                and how far I've come in just a short amount of time, all because I couldn't make two tables. 
+            </p> 
+            <p>See the to-do list app <a href='https://claireramming.github.io/todo-list/'>here!</a></p>
+
+            <p>See my code on <a href='https://github.com/claireramming/todo-list'>github.</a></p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:ceramming@gmail.com" class="footer__link">ceramming@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io/claireramming">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/claire-ramming/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/claireramming">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
