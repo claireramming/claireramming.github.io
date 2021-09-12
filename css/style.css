@@ -317,7 +317,7 @@ h3 { font-size: var(--fs-h3) }
 
 .intro {
     position: relative;
-    background-image: url('/img/sunflowers.JPG');
+    background-image: url('/img/sunflowers.jpg');
     background-color: var(--clr-light);
     background-size: cover;
     height: 500px;
