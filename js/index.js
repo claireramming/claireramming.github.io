@@ -22,7 +22,7 @@ function darkModeOn() {
     footer.classList.add('dark')
     intro ? intro.classList.add('dark') : ''
     introSub ? introSub.classList.add('dark') : '';
-    workTitle ? work.classList.add('dark') : ''
+    workTitle ? workTitle.classList.add('dark') : ''
     for (let i=0; i < rays.length; i++) {
         if (i <= 1) {
           rays[i].classList.add('lower')
@@ -51,7 +51,7 @@ function darkModeOff() {
     footer.classList.remove('dark')
     intro ? intro.classList.remove('dark') : ''
     introSub ? introSub.classList.remove('dark') : '';
-    workTitle ? work.classList.remove('dark') : ''
+    workTitle ? workTitle.classList.remove('dark') : ''
     for (let i=0; i < rays.length; i++) {
         if (i <= 1) {
             rays[i].classList.remove('lower')
