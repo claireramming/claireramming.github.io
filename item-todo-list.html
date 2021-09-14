@@ -61,10 +61,24 @@
                 looked like when I first deployed it to github pages: 
             </p>
             <img src='/img/todo-old.png' alt='sad looking previous version of to-do list app'>
-            <p>It is quite amazing how styling can make a difference. The functionality of the app is essentially the same (I fixed some bugs and added local storage usage instead 
-                of starting with fake default tasks). Now I know javascript a lot better, and I actually know what flexbox and grid are now and how to use them. I also took the 
-                time to learn how to customize checkboxes. I had no idea it was so complicated, but now I know how to make them look nice and keep them accessible thanks to 
-                <a href='https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/'>this article</a>. 
+            <p>The existing functionality from the class was just being able to click the checkbox. I added the ability to add your own tasks and remove tasks (which looped 
+                back to my two tables issue since I solved that by using arrays and spread operators, similar to how you add or remove a task from the list), and that was about it 
+            for the first iteration of my task app. </p>
+            <p>For my latest updates, I started with styling. It is quite amazing how styling can make a difference. The functionality of the app was essentially the same at first 
+                (I fixed some bugs and added local storage usage instead of starting with fake default tasks). Now I know javascript a lot better, and I actually know what flexbox 
+                and grid are now and how to use them. As part of my styling updates, I took the time to learn how to customize checkboxes. I had no idea it was so complicated, but 
+                now I know how to make them look nice and keep them accessible thanks to 
+                <a href='https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/'>this article</a>. The gist is, you need to keep the original 
+                checkbox in the DOM, which means placing it absolutely, and setting the opacity to 0, instead of setting hidden in the html, or display: none in css. 
+                The original checkbox can still handle the actual checking and unchecking, and you can style an svg or whatever your preference is underneath the 'invisible' checkbox.</p>
+            <p>I also really wanted to be able to inline edit the tasks, which meant I had to learn about refs and focus. At first I was just using an onClick function on the paragraph that 
+                made up my task label, which worked, but you had to click again to actually be able to edit the task text. With a ref I could check for edit===true (with UseEffect) 
+                and give my text input the focus. In order to revert the text back to it's paragraph label upon losing focus, I used the react-foco Foco component. Now that I could edit my task 
+            labels, I also wanted the ability to delete tasks by clearing out their text and hitting an extra backspace. This seemed simple at first, but I ran into two issues: backspace wasn't 
+            being recognized by onKeyPress or onChange, and if I cleared the text out without deleting the task, I could no longer edit the task. The first problem I solved by using onKeyDown, 
+            which registers both Enter and Backspace. The second problem I had to inspect the DOM to see what the issue was. Essentially when I cleared out the text but didn't delete the task I 
+            left my paragraph with no height or width. This I fixed in css by adding a min-height and min-width.</p>
+            <p>
                 At the time of posting this I'm about to dive back into learning React after finishing the scrimba front end career path javascript/css/html components. 
                 Hopefully I will have another cool react app to share soon that really shows off my skills, but for now take this as a story of my journey so far, 
                 and how far I've come in just a short amount of time, all because I couldn't make two tables. 
