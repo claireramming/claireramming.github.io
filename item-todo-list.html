@@ -71,13 +71,13 @@
                 <a href='https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/'>this article</a>. The gist is, you need to keep the original 
                 checkbox in the DOM, which means placing it absolutely, and setting the opacity to 0, instead of setting hidden in the html, or display: none in css. 
                 The original checkbox can still handle the actual checking and unchecking, and you can style an svg or whatever your preference is underneath the 'invisible' checkbox.</p>
-            <p>I also really wanted to be able to inline edit the tasks, which meant I had to learn about refs and focus. At first I was just using an onClick function on the paragraph that 
-                made up my task label, which worked, but you had to click again to actually be able to edit the task text. With a ref I could check for edit===true (with UseEffect) 
-                and give my text input the focus. In order to revert the text back to it's paragraph label upon losing focus, I used the react-foco Foco component. Now that I could edit my task 
-            labels, I also wanted the ability to delete tasks by clearing out their text and hitting an extra backspace. This seemed simple at first, but I ran into two issues: backspace wasn't 
-            being recognized by onKeyPress or onChange, and if I cleared the text out without deleting the task, I could no longer edit the task. The first problem I solved by using onKeyDown, 
-            which registers both Enter and Backspace. The second problem I had to inspect the DOM to see what the issue was. Essentially when I cleared out the text but didn't delete the task I 
-            left my paragraph with no height or width. This I fixed in css by adding a min-height and min-width.</p>
+            <p>I also really wanted to be able to inline edit the tasks, which meant I had to learn about refs and focus. I first decided to try toggling my todo item between a paragraph and a 
+                text input, but that led to a lot of complicated ref needs to handle focus, including a 3rd party package that handled outside clicks. Eventually I switched to just using 
+                text inputs, which handled most of the focusing issues for me. The only thing I needed a ref for was switching focus off the edited task after Enter was hit. I also took the 
+                opportunity to set the initial focus on the new task input.  Now that I could edit my task labels, I also wanted the ability to delete tasks by clearing out their text 
+                and hitting an extra backspace. This seemed simple at first, but I ran into two issues: backspace wasn't being recognized by onKeyPress or onChange, and I also found that 
+                hitting Enter in a current task now also created an empty new task. Both problems I solved by swithing OnKeyPress to OnKeyDown, which registers both Enter and Backspace, but will not 
+                pick up an extra Enter press if the press down happened in a different element (before I think it was picking up the KeyUp since focus was shifted on KeyDown). </p>
             <p>
                 At the time of posting this I'm about to dive back into learning React after finishing the scrimba front end career path javascript/css/html components. 
                 Hopefully I will have another cool react app to share soon that really shows off my skills, but for now take this as a story of my journey so far, 
