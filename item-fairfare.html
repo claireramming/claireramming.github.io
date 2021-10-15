@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire Ramming Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>
+        <header id='header' class='header'>
+            <div id='sun' class='sun'>
+                <div class='ball'></div>
+                <div class='ray one'></div>
+                <div class='ray two'></div>
+                <div class='ray three'></div>
+                <div class='ray four'></div>
+                <div class='ray five'></div>
+                <div class='ray six'></div>
+                <div class='ray seven'></div>
+                <div class='ray eight'></div>
+            </div>
+            <div class="header-div">Claire Ramming</div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="portfolio-item">
+            <h1 class="section__title section__title--item">
+                AirBnB <strong>Fair Fare</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--item">js, html, css</p>
+            <img src="img/fairfare.png" alt="fair fare project" class="item__img">
+            <p class='date'>Oct 15th, 2021</p>
+        </section> 
+        
+        <div class="portfolio-item-individual">
+            <p>This project is meant to be a proof of concept for a machine learning app. There are a lot of AirBnB listings in NYC, it can be overwhelming 
+                for a person trying to book a room, or a new renter trying to rent a space, to figure out what a fair price is for a listing. With this project
+                have created a tool that uses machine learning to find fair price ranges for AirBnB listings in New York City.</p>
+            <p>This project was originally my second Capstone project for my Springboard Data Science bootcamp, but similar to my to-do list, the original 
+                version I made was ugly and clunky. I had originally built it in python with Flask, way before I really knew what I was doing with html, and 
+                my styling knowledge was completely non-existent. I also never fully deployed it anywhere, it was just sitting in github with instructions for how 
+                to get it up and running locally if anyone so wished to. I decided to rebuild it so the layout looked nice and was responsive, and I also decided to 
+                re-do the python api with fastAPI. </p>
+            <p>The fastAPI part was very simple, they make it really easy to get an API spun up with just a few lines of code. Since I already had the functions I needed 
+                set up, all I had to do was write a few lines to get the endpoint collecting the right stuff and we were off to the races.The styling I kept simple, and the 
+                trickiest part there was getting my media queries set up correctly so it switched at the right times. I have it set up for mobile, tablet, and desktop. I also 
+                added a footer with a new custom logo I whipped up in gimp. When clicked, it takes the user back to my main portfolio site. </p> 
+            <p>To deploy this I used Heroku for the backend and github pages for the front-end. Heroku was a bit daunting at first but after following a tutorial I was able to 
+                get my app created and built up all the necessary files (pipreqs really came in handy to pull in only the requirements needed for the api and no other bits of python 
+                I had lying around from my initial build of this app). The tricky part I found was debugging Heroku when my app was crashing. I could see from the logs that it wasn't 
+                finding my pickled files but I couldn't figure out what the correct path was. I finally realized the answer was also in the logs. It was telling me exactly what the file 
+                path was to the script where the error was, so I had to put in that whole path for heroku to find my files. When I run this locally I can use a shortcut based on where I'm 
+                running the uvicorn command from. </p>
+            <p>I did not change anything in the model. I had to clean up some code to get everything running, but my data cleaning and tuning stayed the same. My data is from 2017 so the
+                prices it delivers are a bit low. If I was to spend more time on this I would try to do a scrape of current AirBNB prices and refactor my model for that. After some brief google 
+                searching I did find an API for it on rapidAPI, but it only would pull a few hundred listings at a time, and limited the free API calls to 20 a month. I also found some other APIs 
+                claiming they could pull all the NYC data, so I have options if I ever want to focus on python again. For now, I'm happy with where it is at for a POC.  
+            </p>
+
+            <p>Find some Fair Fares here <a href='https://claireramming.github.io/Capstone-2/'>here!</a></p>
+
+            <p>See my code and original project fairon <a href='https://github.com/claireramming/Capstone-2'>github.</a></p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:ceramming@gmail.com" class="footer__link">ceramming@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io/claireramming">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/claire-ramming/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/claireramming">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
