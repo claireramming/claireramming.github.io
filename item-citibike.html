@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire Ramming Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>
+        <header id='header' class='header'>
+            <div id='sun' class='sun'>
+                <div class='ball'></div>
+                <div class='ray one'></div>
+                <div class='ray two'></div>
+                <div class='ray three'></div>
+                <div class='ray four'></div>
+                <div class='ray five'></div>
+                <div class='ray six'></div>
+                <div class='ray seven'></div>
+                <div class='ray eight'></div>
+            </div>
+            <div class="header-div">Claire Ramming</div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="portfolio-item">
+            <h1 class="section__title section__title--item">
+                Fun With <strong>Citibike and Mapbox</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--item">js, mapboxgl-js</p>
+            <img src="img/citibike.png" alt="citibike mapbox project" class="item__img">
+            <p class='date'>Oct 21st, 2021</p>
+        </section> 
+        
+        <div class="portfolio-item-individual">
+            <p>I’ve been studying a lot of React code using mapbox, and wanted to see if I could make something of my own in javascript. I envisioned a 
+                tool that could be used before hopping on a citibike to check if a nearby dock actually has bikes available, and if your destination is also 
+                near a station with docks available. I have been spurned before by a completely full citibike station before, so I can attest to the usefulness. 
+                This app is not complete yet, but so far you can look up a location and see what the nearby stops are, and whether they have docks or bikes available. </p>
+            <p>Citibike has a GBFS feed that you can pull station data from. The bike/dock number info is in a separate json file than the station location info, so some 
+                mapping had to be done . Right now I'm just using a for-of loop to loop over the station status array and pull the relevant data for the station. 
+            </p> 
+            <p>Mapbox has been fun to play around with. The plugins are great, it makes it very easy to add things like geocoders (the location search box) and do more 
+                complicated calculations with Turf. I spun the current version of this app up in one day using their examples and tutorials. I will continue to update 
+                this page as I update the app.
+            </p>
+
+            <p>Look up some locations <a href='https://cr-citibike-mapbox.netlify.app/'>here!</a></p>
+
+            <p>See my code on <a href='https://github.com/claireramming/citibike-mapbox'>github.</a></p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:ceramming@gmail.com" class="footer__link">ceramming@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io/claireramming">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/claire-ramming/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/claireramming">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
