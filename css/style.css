@@ -522,6 +522,11 @@ h3 { font-size: var(--fs-h3) }
     text-align: center;    
 }
 
+.kevala_link {
+    color: #e49968;
+    font-weight: bold;
+}
+
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
