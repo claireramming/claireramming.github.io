@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire Ramming Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body>
+        <header id='header' class='header'>
+            <div id='sun' class='sun'>
+                <div class='ball'></div>
+                <div class='ray one'></div>
+                <div class='ray two'></div>
+                <div class='ray three'></div>
+                <div class='ray four'></div>
+                <div class='ray five'></div>
+                <div class='ray six'></div>
+                <div class='ray seven'></div>
+                <div class='ray eight'></div>
+            </div>
+            <div class="header-div">Claire Ramming</div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="portfolio-item">
+            <h1 class="section__title section__title--item">
+                Episode Tracking with <strong>TV Tea</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--item">React, Typescript, Django, Auth0</p>
+            <img src="img/tvtea.png" alt="tv tea react/typescript/django project" class="item__img">
+            <p class='date'>Feb 13th, 2025</p>
+        </section> 
+        
+        <div class="portfolio-item-individual">
+            <p>After working for over 3 years in Svelte I wanted to make sure my React chops were still sharp, and see if I could 
+                add Typescript to my repertoire as those two in combination seem to be the go-to frontend for most modern applications. I decided to build 
+                a TV season/episode tracking web app because I have been using a phone app (Watch List) to track shows that I want to watch/am currently watching but it is lacking some 
+                features that I think would make it a better app. The two features I was aiming to find a solution for were: finding where the show was available to watch without having 
+                to click through to other screens, and episode stat tracking. So far I have implemented the first of those features, and the backend for the second. </p>
+            <p>React was fairly easy to pick back up. I had some previous projects I could use as examples. There have been some upgrades since I last used it 
+                (my To Do app was built with react 17, and this project was in React 18, although React 19 has been recently released), but overall the core concepts remain the same. 
+                I found the transition to using Typescript with React to be somewhat smooth, and it has helped catch errors early in the development process but I find that some of my objects get quite large and complicated,
+                and the typescript errors are quite picky. I definitely have some Typescript errors floating around this project currently, but I have a workable app. Some errors I have explicitly ignored, like no floating promises,
+                others I'd like to go back to and find better ways to write my code that removes the errors. I don't mind making custom types and I found that autocomplete in VSCode made the process fairly simple.
+            </p> 
+            <p>This project was also my first time implementing auth into an app. I went with Auth0 as that seems to be a popular option and is used by my current employer so I had some familiarity with it already.
+                The documentation was good but sometimes difficult to find what I truly needed. It took me a few days to settle on a setup that I felt was best. I went with the Auth0 React integration so login is handled by the frontend, 
+                and then the backend is protected by a middleware that checks an access token the user is given via auth0 and passed in the header from the frontend calls. I also spent a day planning out my backend, starting by writing out everything
+                 that I wanted the app to be able to do, then structuring a backend around that. This meant setting up three tables, one for a user profile so the user could set preferences that could be used to control features around the application. 
+                 Next was the actual watch list table that would hold all of the seasons users are watching and track their progress. The table is fairly small since I don't need to save off a lot of actual season info, just info that is specific to the user
+                 or info that I want to compare for updates, like the status of a television show. In the future I could alert users to cancelled shows or let them know when a show is starting production again. Lastly there is a table to track stats. I wanted to 
+                 start simply for now just tracking the number of shows a user marks as watched and how many minutes of television that adds up to, and track those counts per day. Once the backend was set up and auth and fetch calls were working as intended, the rest of
+                my time could be spent having fun with the UI. I used tailwind and DaisyUI for styling and components. react-toastify made toast notifications easy. 
+            </p>
+
+            <p>There is a lot I still want to do with this project, check the README for the latest info about the project status. I will try to update this page as new features get integrated.</p>
+
+            <p>Start tracking your TV watching <a href='https://tv-tea.vercel.app/'>here!</a></p>
+
+            <p>See my code on <a href='https://github.com/claireramming/tv-tea'>github.</a></p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:ceramming@gmail.com" class="footer__link">ceramming@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io/claireramming">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/claire-ramming/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/claireramming">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
