@@ -55,9 +55,17 @@
             <p>After working for over 3 years in Svelte I wanted to make sure my React chops were still sharp, and see if I could 
                 add Typescript to my repertoire as those two in combination seem to be the go-to frontend for most modern applications. I decided to build 
                 a TV season/episode tracking web app because I have been using a phone app (Watch List) to track shows that I want to watch/am currently watching but it is lacking some 
-                features that I think would make it a better app. The two features I was aiming to find a solution for were: finding where the show was available to watch without having 
-                to click through to other screens, and episode stat tracking. So far I have implemented the first of those features, and the backend for the second. </p>
-            <p>React was fairly easy to pick back up. I had some previous projects I could use as examples. There have been some upgrades since I last used it 
+                features that I think would make it a better app. The two features I was aiming to find a solution for were: </p>
+                <ul> 
+                    <li>finding where the show was available to watch without having to click through to other screens</li>
+                    <li>episode stat tracking</li>
+                </ul>
+            <p>So far I have implemented a simple version of both features. For where the shows are available, TMDB provides a watch provider object with country codes as keys and several types of providers 
+                (basically free vs paid vs cable). For my first iteration I am only looking at US and "flatrate" providers, which consists of all the major streaming apps. For the first iteration of the stats page I have a simple model that
+            collects daily aggregates of shows watched and time watched when the user increments the watched episodes of a season (decrementing will remove the stats if they are able to be decremented, no day can go into the negative). I also added
+            a modal to the To Watch tab that can capture "pre-watched" episodes so users won't skew their stats if they have already watched a few episodes of a season before tracking it. The stats page then shows the users total episodes watched, total minutes watched,
+            and total seasons completed over either the last week, month, year, or overall (depending on user selection). </p>
+            <p>In my experience building the app, React was fairly easy to pick back up. I had some previous projects I could use as examples. There have been some upgrades since I last used it 
                 (my To Do app was built with react 17, and this project was in React 18, although React 19 has been recently released), but overall the core concepts remain the same. 
                 I found the transition to using Typescript with React to be somewhat smooth, and it has helped catch errors early in the development process but I find that some of my objects get quite large and complicated,
                 and the typescript errors are quite picky. I definitely have some Typescript errors floating around this project currently, but I have a workable app. Some errors I have explicitly ignored, like no floating promises,
